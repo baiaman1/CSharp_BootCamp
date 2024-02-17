@@ -1,0 +1,14 @@
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/bin/Debug/net8.0/LifeOnCredit
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/bin/Debug/net8.0/LifeOnCredit.deps.json
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/bin/Debug/net8.0/LifeOnCredit.runtimeconfig.json
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/bin/Debug/net8.0/LifeOnCredit.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/bin/Debug/net8.0/LifeOnCredit.pdb
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.GeneratedMSBuildEditorConfig.editorconfig
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.AssemblyInfoInputs.cache
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.AssemblyInfo.cs
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.csproj.CoreCompileInputs.cache
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/refint/LifeOnCredit.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.pdb
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.genruntimeconfig.cache
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/ref/LifeOnCredit.dll
