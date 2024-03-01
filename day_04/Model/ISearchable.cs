@@ -1,4 +1,4 @@
-namespace Day04
+namespace d04.Model
 {
     public interface ISearchable
     {

@@ -1,12 +1,14 @@
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Day04
+namespace d04.Model
 {
-    class Movie
+    class MovieReview : ISearchable
     {
         [JsonProperty("results")]
         public Result[]? Results {get; set;}
+        // [JsonProperty("title")]
+        public string Title { get; set; }
 
         public class Result
         {

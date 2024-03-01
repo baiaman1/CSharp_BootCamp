@@ -4,37 +4,30 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Day04
+namespace d04.Model
 {
-    public class Book
+    public class BookReview : ISearchable
     {
-        [JsonProperty("results")]
+        public string Title { get; set; }
         public Result[]? Results { get; set; }
 
         public class Result
         {
-            [JsonProperty("book_details")]
             public BookDetail[]? BookDetails { get; set; }
 
-            [JsonProperty("rank")]
             public int Rank { get; set; }
 
-            [JsonProperty("list_name")]
             public string? ListName { get; set; }
 
-            [JsonProperty("amazon_product_url")]
             public string? AmazonProductUrl { get; set; }
         }
 
         public class BookDetail
         {
-            [JsonProperty("title")]
             public string? Title { get; set; }
 
-            [JsonProperty("author")]
             public string? Author { get; set; }
 
-            [JsonProperty("description")]
             public string? Description { get; set; }
         }
 
@@ -52,6 +45,8 @@ namespace Day04
                 }
             }
             return sb.ToString();
+            // return $"{Title} by {Author} [{Rank} on NYT’s {ListName}]\n{SummaryShort}\n{Url}\n";
+
         }
     }
 }
