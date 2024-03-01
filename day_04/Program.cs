@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using d04.Model;
+using System.Security.Cryptography;
 
 namespace d04
 {
@@ -29,8 +30,15 @@ namespace d04
     {
         static void Main(string[] args)
         {
-            List<BookReview> bookReviews = LoadBookReviewsFromJson("book_reviews.json");
-            List<MovieReview> movieReviews = LoadMovieReviewsFromJson("movie_reviews.json");
+            string BookJson = File.ReadAllText("book_reviews.json");
+            var books = JsonConvert.DeserializeObject<BookReviewResponse>(BookJson);
+            List<BookReview> bookReviews = [];
+            if(books != null) bookReviews = books.Results;
+
+            string MovieJson = File.ReadAllText("movie_reviews.json");
+            var movies = JsonConvert.DeserializeObject<MovieReviewResponse>(MovieJson);
+            List<MovieReview> movieReviews = [];
+            if(movies != null) movieReviews = movies.Results;
 
 
 
@@ -60,29 +68,15 @@ namespace d04
                 }
             }
         }
-
-        static List<BookReview> LoadBookReviewsFromJson(string filePath)
-        {
-            string json = File.ReadAllText(filePath);
-            var result = JsonConvert.DeserializeObject<BookReviewResponse>(json);
-            return new List<BookReview>(result.Results);
-        }
-
-        static List<MovieReview> LoadMovieReviewsFromJson(string filePath)
-        {
-            string json = File.ReadAllText(filePath);
-            var result = JsonConvert.DeserializeObject<MovieReviewResponse>(json);
-            return new List<MovieReview>(result.Results);
-        }
     }
 
     public class BookReviewResponse
     {
-        public List<BookReview> Results { get; set; }
+        public List<BookReview> Results { get; set; } = [];
     }
 
     public class MovieReviewResponse
     {
-        public List<MovieReview> Results { get; set; }
+        public List<MovieReview> Results { get; set; } = [];
     }
 }
