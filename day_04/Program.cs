@@ -1,28 +1,88 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using d04.Model;
-// using Newtonsoft.Json;
 
-namespace Day04
+namespace d04
 {
+    public static class EnumerableExtensions
+    {
+        public static IEnumerable<T> Search<T>(this IEnumerable<T> list, string search) where T : ISearchable
+        {
+            if (string.IsNullOrWhiteSpace(search))
+                return list;
+
+            string searchLower = search.ToLower();
+
+            var foundItems = list.Where(item => item.Title.ToLower().Contains(searchLower))
+                                 .OrderBy(item => item.Title);
+
+            if (!foundItems.Any())
+                Console.WriteLine($"There are no \"{search}\" in media today.");
+
+            return foundItems;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            var options = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
-            };
-            string json = File.ReadAllText("book_reviews.json");
-            var books = JsonSerializer.Deserialize<BookReview>(json, options);
-            if (books != null) Console.WriteLine(books);
+            List<BookReview> bookReviews = LoadBookReviewsFromJson("book_reviews.json");
+            List<MovieReview> movieReviews = LoadMovieReviewsFromJson("movie_reviews.json");
 
-            // string json = File.ReadAllText("movie_reviews.json");
-            // var movie = JsonConvert.DeserializeObject<Movie>(json);
-            // if (movie != null) Console.WriteLine(movie.ToString());
+
+
+            Console.WriteLine("Input search text:");
+            string? searchText = Console.ReadLine();
+
+            if (searchText != null)
+            {
+
+                var foundBooks = bookReviews.Search(searchText);
+                var foundMovies = movieReviews.Search(searchText);
+                int bookCount = foundBooks.Count();
+                int movieCount = foundMovies.Count();
+
+
+                Console.WriteLine($"\nItems found: {bookCount+movieCount}");
+                Console.WriteLine($"\nBook search result [{bookCount}]:");
+                foreach (var book in foundBooks)
+                {
+                    Console.WriteLine(book);
+                }
+
+                Console.WriteLine($"\nMovie search result [{movieCount}]:");
+                foreach (var movie in foundMovies)
+                {
+                    Console.WriteLine(movie);
+                }
+            }
         }
+
+        static List<BookReview> LoadBookReviewsFromJson(string filePath)
+        {
+            string json = File.ReadAllText(filePath);
+            var result = JsonConvert.DeserializeObject<BookReviewResponse>(json);
+            return new List<BookReview>(result.Results);
+        }
+
+        static List<MovieReview> LoadMovieReviewsFromJson(string filePath)
+        {
+            string json = File.ReadAllText(filePath);
+            var result = JsonConvert.DeserializeObject<MovieReviewResponse>(json);
+            return new List<MovieReview>(result.Results);
+        }
+    }
+
+    public class BookReviewResponse
+    {
+        public List<BookReview> Results { get; set; }
+    }
+
+    public class MovieReviewResponse
+    {
+        public List<MovieReview> Results { get; set; }
     }
 }
