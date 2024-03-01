@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "maOGdkWmbfME4qUiGTcKFGvyrfEmaPFIv0oG2G2IhsJYdMMEPjUznag5p6nyBDxzR4+fUXUmBSvtB36RoCT8ww==",
+  "success": true,
+  "projectFilePath": "/Users/admin/Documents/csharpProjects/bootcamp/day_04/day_04.csproj",
+  "expectedPackageFiles": [
+    "/Users/admin/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
