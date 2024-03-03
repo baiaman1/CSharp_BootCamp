@@ -1,12 +1,13 @@
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace d04.Model
 {
     public class MovieReview : ISearchable
     {
         public string Title { get; set; } = "";
+        public int CriticsPick { get; set; }
 
-        public bool IsCriticsPick { get; set; }
+        // public bool IsCriticsPick = CriticsPick == 1;
 
         public string SummaryShort { get; set; } = "";
 
@@ -14,10 +15,10 @@ namespace d04.Model
 
         public override string ToString()
         {
-            string criticsPick = IsCriticsPick ? "[NYT critic’s pick]" : "";
+            string strCriticsPick = CriticsPick == 1 ? "[NYT critic’s pick]" : "";
             string res = "";
             if (Link != null)
-                res = $"- {Title} {criticsPick}\n{SummaryShort}\n{Link.Url}\n";
+                res = $"- {Title} {strCriticsPick}\n{SummaryShort}\n{Link.Url}\n";
             return res;
         }
 

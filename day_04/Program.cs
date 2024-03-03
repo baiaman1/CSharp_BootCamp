@@ -19,23 +19,44 @@ namespace d04
                 PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower
             };
 
-            string BookJson = File.ReadAllText("book_reviews.json");
-            var books = JsonSerializer.Deserialize<BookReviewResponse>(BookJson, option);
-            List<BookReview> bookReviews = [];
-            if(books != null) bookReviews = books.Results;
-
-            string MovieJson = File.ReadAllText("movie_reviews.json");
-            var movies = JsonSerializer.Deserialize<MovieReviewResponse>(MovieJson, option);
-            List<MovieReview> movieReviews = [];
-            if(movies != null) movieReviews = movies.Results;
-
-
-
-            Console.WriteLine("Input search text:");
-            string? searchText = Console.ReadLine();
-
-            if (searchText != null)
+            if (args.Length > 0 && args[0] == "best")
             {
+                // Book вывести отдельную функцию LoadBookReviewsFromJson
+                string BookJson = File.ReadAllText("book_reviews.json");
+                var books = JsonSerializer.Deserialize<BookReviewResponse>(BookJson, option);
+                List<BookReview> bookReviews = [];
+                if(books != null) bookReviews = books.Results;
+
+                var bestBook = bookReviews.OrderBy(b => b.Rank).FirstOrDefault();
+                Console.WriteLine("Best in books:");
+                Console.WriteLine(bestBook);
+
+                // Movie вывести отдельную функцию LoadMovieReviewsFromJson
+                string MovieJson = File.ReadAllText("movie_reviews.json");
+                var movies = JsonSerializer.Deserialize<MovieReviewResponse>(MovieJson, option);
+                List<MovieReview> movieReviews = [];
+                if(movies != null) movieReviews = movies.Results;
+
+                var bestMovie = movieReviews.FirstOrDefault(m => m.CriticsPick == 1);
+                Console.WriteLine("Best in movie reviews:");
+                if (bestMovie != null) Console.WriteLine(bestMovie);
+            }
+            else
+            {
+                // Book вывести отдельную функцию LoadBookReviewsFromJson
+                string BookJson = File.ReadAllText("book_reviews.json");
+                var books = JsonSerializer.Deserialize<BookReviewResponse>(BookJson, option);
+                List<BookReview> bookReviews = [];
+                if(books != null) bookReviews = books.Results;
+
+                // Movie вывести отдельную функцию LoadMovieReviewsFromJson
+                string MovieJson = File.ReadAllText("movie_reviews.json");
+                var movies = JsonSerializer.Deserialize<MovieReviewResponse>(MovieJson, option);
+                List<MovieReview> movieReviews = [];
+                if(movies != null) movieReviews = movies.Results;
+
+                Console.WriteLine("Input search text:");
+                string? searchText = Console.ReadLine()!;
                 var foundBooks = bookReviews.Search(searchText);
                 var foundMovies = movieReviews.Search(searchText);
                 int bookCount = foundBooks.Count();
@@ -53,9 +74,6 @@ namespace d04
                 {
                     Console.WriteLine(movie);
                 }
-
-                // IEnumerable<BookReview> obj ;
-                // obj.Search;
             }
         }
     }
