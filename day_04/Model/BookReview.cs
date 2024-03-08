@@ -31,4 +31,10 @@ namespace d04.Model
         [JsonPropertyName("description")]
         public string SummaryShort { get; set; } = "";
     }
+
+
+    public class BookReviewResponse
+    {
+        public List<BookReview> Results { get; set; } = [];
+    }
 }

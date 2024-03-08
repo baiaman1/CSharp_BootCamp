@@ -27,4 +27,9 @@ namespace d04.Model
             public string Url { get; set; } = "";
         }
     }
+
+    public class MovieReviewResponse
+    {
+        public List<MovieReview> Results { get; set; } = [];
+    }
 }

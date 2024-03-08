@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-// using Newtonsoft.Json;
 using d04.Model;
 using System.Text.Json;
 using System.Security.Cryptography;
+using Microsoft.Extensions.Configuration;
 
 namespace d04
 {
@@ -19,23 +19,23 @@ namespace d04
                 PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower
             };
 
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+            string bookReviewsFilePath = configuration["BookReviewsFilePath"]!;
+            string movieReviewsFilePath = configuration["MovieReviewsFilePath"]!;
+
             if (args.Length > 0 && args[0] == "best")
             {
-                // Book вывести отдельную функцию LoadBookReviewsFromJson
-                string BookJson = File.ReadAllText("book_reviews.json");
-                var books = JsonSerializer.Deserialize<BookReviewResponse>(BookJson, option);
-                List<BookReview> bookReviews = [];
-                if(books != null) bookReviews = books.Results;
+                // Best Book
+                List<BookReview> bookReviews = LoadBookReviewsFromJson(bookReviewsFilePath, option);
 
                 var bestBook = bookReviews.OrderBy(b => b.Rank).FirstOrDefault();
                 Console.WriteLine("Best in books:");
                 Console.WriteLine(bestBook);
 
-                // Movie вывести отдельную функцию LoadMovieReviewsFromJson
-                string MovieJson = File.ReadAllText("movie_reviews.json");
-                var movies = JsonSerializer.Deserialize<MovieReviewResponse>(MovieJson, option);
-                List<MovieReview> movieReviews = [];
-                if(movies != null) movieReviews = movies.Results;
+                // Best Movie
+                List<MovieReview> movieReviews = LoadMovieReviewsFromJson(movieReviewsFilePath, option);
 
                 var bestMovie = movieReviews.FirstOrDefault(m => m.CriticsPick == 1);
                 Console.WriteLine("Best in movie reviews:");
@@ -43,26 +43,22 @@ namespace d04
             }
             else
             {
-                // Book вывести отдельную функцию LoadBookReviewsFromJson
-                string BookJson = File.ReadAllText("book_reviews.json");
-                var books = JsonSerializer.Deserialize<BookReviewResponse>(BookJson, option);
-                List<BookReview> bookReviews = [];
-                if(books != null) bookReviews = books.Results;
+                // Books
+                List<BookReview> bookReviews = LoadBookReviewsFromJson(bookReviewsFilePath, option);
 
-                // Movie вывести отдельную функцию LoadMovieReviewsFromJson
-                string MovieJson = File.ReadAllText("movie_reviews.json");
-                var movies = JsonSerializer.Deserialize<MovieReviewResponse>(MovieJson, option);
-                List<MovieReview> movieReviews = [];
-                if(movies != null) movieReviews = movies.Results;
+                // Movies
+                List<MovieReview> movieReviews = LoadMovieReviewsFromJson(movieReviewsFilePath, option);
 
                 Console.WriteLine("Input search text:");
                 string? searchText = Console.ReadLine()!;
                 var foundBooks = bookReviews.Search(searchText);
                 var foundMovies = movieReviews.Search(searchText);
+
                 int bookCount = foundBooks.Count();
                 int movieCount = foundMovies.Count();
+                int itemsFound = bookCount+movieCount;
 
-                Console.WriteLine($"\nItems found: {bookCount+movieCount}");
+                Console.WriteLine($"\nItems found: {itemsFound}");
                 Console.WriteLine($"\nBook search result [{bookCount}]:");
                 foreach (var book in foundBooks)
                 {
@@ -76,16 +72,24 @@ namespace d04
                 }
             }
         }
-    }
 
-    public class BookReviewResponse
-    {
-        public List<BookReview> Results { get; set; } = [];
-    }
+        public static List<BookReview> LoadBookReviewsFromJson(string filePath, JsonSerializerOptions option)
+        {
+            string MovieJson = File.ReadAllText(filePath);
+            var books = JsonSerializer.Deserialize<BookReviewResponse>(MovieJson, option);
+            List<BookReview> BookReviews = [];
+            if(books != null) BookReviews = books.Results;
+            return BookReviews;
+        }
 
-    public class MovieReviewResponse
-    {
-        public List<MovieReview> Results { get; set; } = [];
+        public static List<MovieReview> LoadMovieReviewsFromJson(string filePath, JsonSerializerOptions option)
+        {
+            string MovieJson = File.ReadAllText(filePath);
+            var movies = JsonSerializer.Deserialize<MovieReviewResponse>(MovieJson, option);
+            List<MovieReview> movieReviews = [];
+            if(movies != null) movieReviews = movies.Results;
+            return movieReviews;
+        }
     }
 
     public static class EnumerableExtensions
