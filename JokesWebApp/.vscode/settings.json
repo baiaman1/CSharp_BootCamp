@@ -1,0 +1,7 @@
+{
+    "dataworkspace.excludedProjects": [
+        "serve/serve.sqlproj",
+        "Jokes/Jokes.sqlproj"
+    ],
+    "sqltools.connections": []
+}
