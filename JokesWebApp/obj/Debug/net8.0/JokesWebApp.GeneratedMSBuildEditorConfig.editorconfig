@@ -18,9 +18,7 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = JokesWebApp
 build_property.RootNamespace = JokesWebApp
 build_property.ProjectDir = /Users/admin/Documents/csharpProjects/bootcamp/JokesWebApp/
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 8.0
+build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/admin/Documents/csharpProjects/bootcamp/JokesWebApp
@@ -56,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/admin/Documents/csharpProjects/bootcamp/JokesWebApp/Views/Jokes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9rZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/admin/Documents/csharpProjects/bootcamp/JokesWebApp/Views/Jokes/ShowSearchForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9rZXMvU2hvd1NlYXJjaEZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/admin/Documents/csharpProjects/bootcamp/JokesWebApp/Views/Shared/Error.cshtml]
