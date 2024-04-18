@@ -12,7 +12,7 @@ void Print() {
                 if (name != null)
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (line.Contains(name)) 
+                    if (line==name) 
                     {
                         Console.WriteLine($"Hello, {name}!");
                         find = true;
@@ -46,9 +46,14 @@ void Print() {
         {
             Console.WriteLine("Файл не найден.");
         }
-}
 
-Print();
+}
+// int a = 'a' - 32;
+string str = "q";
+str += char(str[0]-32);
+System.Console.WriteLine(str);
+
+// Print();
 
 int LevenDis(string s, string t)
 {

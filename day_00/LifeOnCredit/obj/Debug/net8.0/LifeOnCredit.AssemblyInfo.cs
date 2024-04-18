@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LifeOnCredit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+436bca312af8ac779160861bb626e1cd91990771")]
 [assembly: System.Reflection.AssemblyProductAttribute("LifeOnCredit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LifeOnCredit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

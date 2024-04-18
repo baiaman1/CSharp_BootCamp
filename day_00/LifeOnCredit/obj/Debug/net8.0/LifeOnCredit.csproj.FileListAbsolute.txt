@@ -12,3 +12,4 @@
 /Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.pdb
 /Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.genruntimeconfig.cache
 /Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/ref/LifeOnCredit.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_00/LifeOnCredit/obj/Debug/net8.0/LifeOnCredit.sourcelink.json

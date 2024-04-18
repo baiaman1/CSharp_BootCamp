@@ -1,0 +1,15 @@
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.GeneratedMSBuildEditorConfig.editorconfig
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.AssemblyInfoInputs.cache
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.AssemblyInfo.cs
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.csproj.CoreCompileInputs.cache
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.sourcelink.json
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/bin/Debug/net8.0/Polymorphism
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/bin/Debug/net8.0/Polymorphism.deps.json
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/bin/Debug/net8.0/Polymorphism.runtimeconfig.json
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/bin/Debug/net8.0/Polymorphism.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/bin/Debug/net8.0/Polymorphism.pdb
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/refint/Polymorphism.dll
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.pdb
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/Polymorphism.genruntimeconfig.cache
+/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_01/freeCodeCamp/Polymorphism/obj/Debug/net8.0/ref/Polymorphism.dll

@@ -1,56 +1,44 @@
-// using Tasks;
-using System;
-namespace Tasks
+namespace ToDo
 {
+    // class Task(string title, string summary, DateTime dueDate, TaskType type, TaskPriority priority, TaskState state)
+    // {
+    //     public required string Title { get; init; } = title;
+    //     private string? Summary {get;} = summary;
+    //     private DateTime DueDate {get;} = dueDate;
+    //     private TaskType Type = type; 
+    //     private TaskPriority Priority = priority;
+    //     private TaskState State = state; 
+    // }
 
-    public class Task
+
+    class Task
     {
-        public string Title { get; private set; }
-        public string Description { get; private set; }
-        public DateTime? DueDate { get; private set; }
-        public TaskType Type { get; private set; }
-        public TaskPriority Priority { get; private set; }
-        public TaskState State { get; private set; }
+ 
 
-        // Constructor
-        public Task(string title, string description, DateTime? dueDate, TaskType type, TaskPriority priority)
+        public Task(string title, string summary, DateTime dueDate, TaskType type, TaskPriority priority, TaskState state)
         {
-            Title = title;
-            Description = description;
-            DueDate = dueDate;
-            Type = type;
-            Priority = priority;
-            State = TaskState.New;
+
+
+            this.Title = title;
+            this.Summary = summary;
+            this.DueDate = dueDate;
+            this.Type = type;
+            this.Priority = priority;
+            this.State = state;
         }
 
-        public Task(string title, string description, TaskType type, TaskPriority priority)
-        {
-            Title = title;
-            Description = description;
-            Type = type;
-            Priority = priority;
-            State = TaskState.New;
-        }
-
-        // Override ToString() to provide custom string representation
+        public required string Title { get; init; } 
+        private string? Summary {get;}
+        private DateTime DueDate {get;}
+        private TaskType Type; 
+        private TaskPriority Priority;
+        private TaskState State;
         public override string ToString()
         {
-            return $"{Title}\n[{Type}] [{State}]\nPriority: {Priority}{(DueDate.HasValue ? ", Due till " + DueDate.Value.ToString("MM/dd/yyyy") : "")}\n{Description}";
-        }
-
-        // Method to mark the task as completed
-        public void MarkAsCompleted()
-        {
-            if (State != TaskState.Completed)
-                State = TaskState.Completed;
-        }
-
-        // Method to mark the task as irrelevant
-        public void MarkAsIrrelevant()
-        {
-            if (State != TaskState.Completed && State != TaskState.Irrelevant)
-                State = TaskState.Irrelevant;
+            return $"1.Title-{Title}\n2.Summary-{Summary}\n3.DueDate-{DueDate}\n4.Type-{Type}\n5.Priority-{Priority}\n6.State-{State}\n";
         }
     }
+
+
 
 }

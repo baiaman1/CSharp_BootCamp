@@ -2,14 +2,14 @@
 using System.Globalization;
 
 void calc() {
-    string[] args = Environment.GetCommandLineArgs();
-    if (args.Length != 4) {
+    // string[] args = Environment.GetCommandLineArgs();
+    if (args.Length != 3) {
         System.Console.WriteLine("Something went wrong. Check your input and retry.");
     }
     else {
-        double sum = double.Parse(args[1]);
-        double rate = double.Parse(args[2]);
-        int term = int.Parse(args[3]);
+        double sum = double.Parse(args[0]);
+        double rate = double.Parse(args[1]);
+        int term = int.Parse(args[2]);
 
         DateTime currentDate = new DateTime(2021, 05, 01);
         DateTime nextMonth = new DateTime(currentDate.Year, currentDate.Month, 1);
@@ -35,10 +35,10 @@ void calc() {
 
             Console.Write($"{num} \t  ");
             Console.Write($"{nextMonth.ToString("d", culture)} \t  ");
-            Console.Write($"{Math.Round(payment,2).ToString("N2",culture)}   \t  ");
-            Console.Write($"{Math.Round(princ,2).ToString("N2",culture)}  \t ");
-            Console.Write($"{Math.Round(interes,2).ToString("N2",culture)}  \t ");
-            Console.Write($"{Math.Round(totalDebt,2).ToString("N2",culture)} ");
+            Console.Write($"{payment.ToString("N2",culture)}   \t  ");
+            Console.Write($"{princ.ToString("N2",culture)}  \t ");
+            Console.Write($"{interes.ToString("N2",culture)}  \t ");
+            Console.Write($"{totalDebt.ToString("N2",culture)} ");
             Console.WriteLine("\t");
             num++;
         }
