@@ -8,8 +8,6 @@ namespace Day03
     {
         static void Main(string[] args)
         {
-
-
             try
             {
                 string jsonPath = args[0];
