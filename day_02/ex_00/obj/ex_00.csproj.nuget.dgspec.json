@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/admin/Documents/csharpProjects/bootcamp/day_02/day02_ex00/ex_00/ex_00.csproj": {}
+    "/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_00/ex_00.csproj": {}
   },
   "projects": {
-    "/Users/admin/Documents/csharpProjects/bootcamp/day_02/day02_ex00/ex_00/ex_00.csproj": {
+    "/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_00/ex_00.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/admin/Documents/csharpProjects/bootcamp/day_02/day02_ex00/ex_00/ex_00.csproj",
+        "projectUniqueName": "/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_00/ex_00.csproj",
         "projectName": "ex_00",
-        "projectPath": "/Users/admin/Documents/csharpProjects/bootcamp/day_02/day02_ex00/ex_00/ex_00.csproj",
+        "projectPath": "/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_00/ex_00.csproj",
         "packagesPath": "/Users/admin/.nuget/packages/",
-        "outputPath": "/Users/admin/Documents/csharpProjects/bootcamp/day_02/day02_ex00/ex_00/obj/",
+        "outputPath": "/Users/admin/Documents/csharpProjects/bootcamp/day_02/ex_00/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/admin/.nuget/NuGet/NuGet.Config"

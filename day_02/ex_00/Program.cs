@@ -28,10 +28,12 @@
 
     static bool checkInput(string[] args)
     {
+        if (args.Length != 2) return false;
+
         bool res = true;
         string[] inputArr = args[0].Split(' ');
         string pathToFile = $"{args[1]}/{inputArr[1]}.txt";
-        if (!File.Exists(pathToFile) || args.Length != 2 || !int.TryParse(inputArr[0], out int inputNum))
+        if (!File.Exists(pathToFile) || !int.TryParse(inputArr[0], out int inputNum))
         {
             res = false;
         }
