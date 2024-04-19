@@ -1,9 +1,13 @@
-namespace ToDo
+
+namespace Tasks
 {
-    enum TaskType
-    {
-        Work, 
-        Study, 
-        Personal
-    }
+    // public enum Type { Work, Study, Personal }
+    // TaskType.cs
+public enum TaskType
+{
+    Work,
+    Study,
+    Personal
+}
+
 }

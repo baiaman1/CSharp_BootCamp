@@ -1,6 +1,7 @@
-namespace ToDo
+   namespace Tasks
 {
-    enum TaskState
+    // enum State {New, Done, Irrelevant}
+    public enum TaskState
     {
         New,
         Completed,
